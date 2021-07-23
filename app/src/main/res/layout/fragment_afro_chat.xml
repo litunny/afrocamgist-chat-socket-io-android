@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/swipeContainer"
+    android:background="@color/lightGreen"
+    android:orientation="vertical"
+    tools:context=".fragment.AfroChatFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/conversation_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginBottom="@dimen/_5sdp" />
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

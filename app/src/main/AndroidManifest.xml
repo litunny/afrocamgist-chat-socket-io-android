@@ -12,8 +12,9 @@
         android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".AfrocamgistApplication"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ChatActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,8 +22,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".service.WebSocketService"/>
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".CommentsActivity"/>
 
+        <service android:name=".service.WebSocketService"/>
         <receiver android:name=".activity.NetworkStateReceiver">
             <intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />

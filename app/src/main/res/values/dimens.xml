@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~    http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <dimen name="dp22">22dp</dimen>
+    <dimen name="dp15">15dp</dimen>
+    <dimen name="dp2">2dp</dimen>
+    <dimen name="dp5">5dp</dimen>
+    <dimen name="dp20">20dp</dimen>
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="dp18">18dp</dimen>
+    <dimen name="dp12">12dp</dimen>
+    <dimen name="dp256">256dp</dimen>
+    <dimen name="dp40">40dp</dimen>
+    <dimen name="dp25">25dp</dimen>
+    <dimen name="dp50">50dp</dimen>
+    <dimen name="peek_height">300dp</dimen>
+    <dimen name="_50sdp">50dp</dimen>
+    <dimen name="_1sdp">1dp</dimen>
+    <dimen name="_5sdp">5dp</dimen>
+    <dimen name="_10sdp">10dp</dimen>
+    <dimen name="_35sdp">35dp</dimen>
+    <dimen name="_14sdp">14dp</dimen>
+    <dimen name="_12sdp">12dp</dimen>
+    <dimen name="_2sdp">2dp</dimen>
+    <dimen name="_18sdp">18dp</dimen>
+    <dimen name="_19sdp">19dp</dimen>
+    <dimen name="_20sdp">20dp</dimen>
+    <dimen name="_200sdp">200dp</dimen>
+    <dimen name="_15sdp">15dp</dimen>
+    <dimen name="_17sdp">17dp</dimen>
+    <dimen name="_3sdp">3dp</dimen>
+    <dimen name="_30sdp">30dp</dimen>
+    <dimen name="_40sdp">40dp</dimen>
+    <dimen name="_8sdp">8dp</dimen>
+    <dimen name="_25sdp">25dp</dimen>
+    <dimen name="_26sdp">26sp</dimen>
+</resources>

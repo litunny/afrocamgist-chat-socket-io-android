@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- When selected, use -->
+    <item android:drawable="@drawable/like_filled_orange24"
+        android:state_checked="true" />
+    <!-- When not selected, use -->
+    <item android:drawable="@drawable/like_border_24"
+        android:state_checked="false"/>
+
+</selector>

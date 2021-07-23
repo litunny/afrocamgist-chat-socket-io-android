@@ -11,11 +11,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.app.hmp.cognitive.afrocamgistchat.activity.BaseSocketActivity;
+import com.app.hmp.cognitive.afrocamgistchat.fragment.AfroChatFragment;
 import com.app.hmp.cognitive.afrocamgistchat.service.WebSocketService;
-import org.json.JSONException;
-import org.json.JSONObject;
-import io.socket.client.Ack;
-import io.socket.emitter.Emitter;
 
 import static com.app.hmp.cognitive.afrocamgistchat.service.WebSocketService.ACTION_SOCKET_MESSAGE;
 
@@ -36,34 +33,39 @@ public class MainActivity extends BaseSocketActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mButton = findViewById(R.id.sendBtn);
-        mEditText = findViewById(R.id.editText);
+//        mButton = findViewById(R.id.sendBtn);
+//        mEditText = findViewById(R.id.editText);
+//
+//        mButton.setOnClickListener( view -> {
+//
+//            JSONObject data = new JSONObject();
+//            try {
+//                data.put("from_id", 2536);
+//                data.put("to_id", 2539);
+//                data.put("message", mEditText.getText().toString());
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//
+//            mSocket.emit("getsocketid", new Emitter.Listener() {
+//                @Override
+//                public void call(Object... args) {
+//                    Log.d(MainActivity.class.getSimpleName(), "getsocketid()");
+//                }
+//            });
+//
+//            mSocket.emit("message", data, new Ack() {
+//                @Override
+//                public void call(Object... args) {
+//                    Log.d(MainActivity.class.getSimpleName(), "Ack()");
+//                }
+//            });
+//        });
 
-        mButton.setOnClickListener( view -> {
-
-            JSONObject data = new JSONObject();
-            try {
-                data.put("from_id", 2536);
-                data.put("to_id", 2539);
-                data.put("message", mEditText.getText().toString());
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-
-            mSocket.emit("getsocketid", new Emitter.Listener() {
-                @Override
-                public void call(Object... args) {
-                    Log.d(MainActivity.class.getSimpleName(), "getsocketid()");
-                }
-            });
-
-            mSocket.emit("message", data, new Ack() {
-                @Override
-                public void call(Object... args) {
-                    Log.d(MainActivity.class.getSimpleName(), "Ack()");
-                }
-            });
-        });
+                getSupportFragmentManager()
+                .beginTransaction()
+                .add(R.id.container, new AfroChatFragment(), AfroChatFragment.class.getSimpleName())
+                .commitAllowingStateLoss();
     }
 
     @Override

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGreen"
+    tools:context=".CommentsActivity">
+
+    <!--<TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/orange"
+        android:fontFamily="@font/montserrat_semibold"
+        android:padding="@dimen/_10sdp"
+        android:text="@string/comments"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16sdp" />-->
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_back" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@id/back"
+                android:fontFamily="@font/montserrat_semibold"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/comments"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"
+            android:background="@color/orange" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/comment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/replying_layout"
+        android:layout_below="@id/title"
+        android:layout_margin="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_15sdp"
+        app:contentPadding="@dimen/_10sdp">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/comments"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="true"
+                tools:listitem="@layout/item_comment" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/no_comments"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center"
+            android:text="@string/no_comments_to_show"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_14sdp"
+            android:visibility="gone" />
+
+    </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:id="@+id/replying_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/write_comment"
+        android:background="@color/grey"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/reply_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/cancel"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/replying_to_harry_pal"
+            android:textSize="@dimen/_10sdp" />
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_close" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/write_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:padding="@dimen/_10sdp">
+
+        <EditText
+            android:id="@+id/user_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_toStartOf="@id/comment"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="@string/writeComment"
+            android:inputType="textMultiLine"
+            android:maxHeight="@dimen/_50sdp"
+            android:scrollbars="vertical"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <Button
+            android:id="@+id/comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:background="@drawable/round_orange_background"
+            android:fontFamily="@font/montserrat_semibold"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:text="@string/comment"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_12sdp" />
+    </RelativeLayout>
+</RelativeLayout>

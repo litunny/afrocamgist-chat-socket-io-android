@@ -71,17 +71,18 @@ public class WebSocketService extends Service {
                 new Handler(Looper.getMainLooper()).post(new Runnable() {
                     @Override
                     public void run() {
-                        Log.d("WebSocketService", "Received");
-                        JSONObject data = (JSONObject) args[0];
-                        String from_id, to_id, message_text;
-                        try {
-                            from_id = data.getString("from_id"); to_id = data.getString("to_id"); message_text = data.getString("message");
-                            sendMessageReceivedEvent(message_text);
-                            Toast.makeText(getApplicationContext(), "Response : " +  message_text, Toast.LENGTH_LONG).show();
-                        } catch (JSONException e) {
-                            Log.d("WebSocketService", e.getMessage());
-                            return;
-                        }
+                        sendMessageReceivedEvent((String) args[0]);
+//                        Log.d("WebSocketService", "Received");
+//                        JSONObject data = (JSONObject) args[0];
+//                        String from_id, to_id, message_text;
+//                        try {
+//                            from_id = data.getString("from_id"); to_id = data.getString("to_id"); message_text = data.getString("message");
+//                            sendMessageReceivedEvent(message_text);
+//                            Toast.makeText(getApplicationContext(), "Response : " +  message_text, Toast.LENGTH_LONG).show();
+//                        } catch (JSONException e) {
+//                            Log.d("WebSocketService", e.getMessage());
+//                            return;
+//                        }
                     }
                 });
             }

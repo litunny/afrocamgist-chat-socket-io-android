@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/lightGreen"
+    tools:context=".ChatActivity">
+
+    <LinearLayout
+        android:id="@+id/profile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingStart="@dimen/_5sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:paddingBottom="@dimen/_5sdp">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_back"/>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_picture"
+                android:layout_width="@dimen/_35sdp"
+                android:layout_height="@dimen/_35sdp"
+                android:layout_toEndOf="@id/back"
+                android:src="@drawable/man" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_toEndOf="@id/profile_picture"
+                android:layout_toStartOf="@+id/more"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="Deckard Shaw"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_baseline_more_vert_24"/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"
+            android:background="@color/orange"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_null"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="No Message Yet"
+        android:gravity="center"
+        android:textSize="@dimen/_17sdp"
+        android:visibility="gone"
+        android:layout_above="@id/message_layout"
+        android:layout_below="@id/profile"/>
+
+    <com.app.hmp.cognitive.afrocamgistchat.activity.ToolDotProgress
+        android:id="@+id/dots_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="16dp"
+        app:color="@color/colorAccent"
+        app:count="3"
+        app:timeout="75" />
+
+    <!--<TextView
+        android:id="@+id/tv_please_wait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Please wait..."
+        android:gravity="center"
+        android:textSize="@dimen/_17sdp"
+        android:visibility="visible"
+        android:layout_above="@id/message_layout"
+        android:layout_below="@id/profile"/>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chat_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/message_layout"
+        android:layout_below="@id/profile"
+        />
+
+    <TextView
+        android:id="@+id/new_messages"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_above="@id/message_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:background="@drawable/round_orange_background"
+        android:fontFamily="@font/montserrat_regular"
+        android:paddingStart="@dimen/_15sdp"
+        android:paddingEnd="@dimen/_15sdp"
+        android:text="New Messages"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_12sdp"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/replying_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey"
+        android:layout_above="@id/message_layout"
+        android:paddingTop="@dimen/_3sdp"
+        android:paddingBottom="@dimen/_3sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/reply_to"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Replying to Harry Pal"
+            android:layout_toStartOf="@id/cancel"
+            android:fontFamily="@font/montserrat_regular"
+            android:layout_centerVertical="true"
+            android:textSize="@dimen/_10sdp"/>
+
+        <ImageView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/ic_close"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/message_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingTop="@dimen/_5sdp"
+        android:paddingEnd="@dimen/_10sdp"
+        android:paddingBottom="@dimen/_5sdp">
+
+        <EditText
+            android:id="@+id/message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/select_image"
+            android:background="@null"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Type here..."
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12sdp" />
+
+        <Button
+            android:id="@+id/select_image"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_toStartOf="@id/send"
+            android:foreground="@drawable/upload_image"
+            android:background="@drawable/button_ripple_effect_red" />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentEnd="true"
+            android:foreground="@drawable/send_msg"
+            android:background="@drawable/button_ripple_effect_red" />
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:visibility="gone"
+        android:background="@color/lightGreen"
+        android:id="@+id/flUserBlockedView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:padding="@dimen/_10sdp"
+            android:background="@drawable/round_corner_blue_orange_15"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="@dimen/_17sdp"
+                android:gravity="center"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="User was blocked by you!.\nPlease Unblock to send message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:id="@+id/tvButtonUnblock"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_35sdp"
+                android:background="@drawable/round_corner_blue_border"
+                android:fontFamily="@font/montserrat_semibold"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:text="@string/unblock"
+                android:gravity="center"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_14sdp"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_40sdp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/llReport"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="1.0">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="Report"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
+            android:orientation="vertical"
+            android:weightSum="1.0">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.0"
+                android:gravity="center"
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_15sdp"
+                android:text="Cancel"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_14sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <!--<color name="colorPrimaryDark">#FF7400</color>-->
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#FF7400</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="orange">#FF7400</color>
+    <color name="blue">#004F95</color>
+    <color name="opaqueBlue">#77004F95</color>
+    <color name="green">#28A745</color>
+    <color name="lightGreen">#E6F9EF</color>
+    <color name="red">#E41749</color>
+    <color name="yellow">#F6DC58</color>
+    <color name="darkGrey">#9f9f9f</color>
+    <color name="darkGrey1">#7B7979</color>
+    <color name="grey">#D9D7D7</color>
+    <color name="hashtag">#1794F8</color>
+    <color name="fullTransparent">#00000000</color>
+
+    <color name="progress_primary">@color/white</color>
+    <color name="progress_secondary">@color/gray_scale</color>
+    <color name="progress_max_active">@color/white</color>
+
+    <color name="gray_scale">#8affffff</color>
+    <color name="gray_transparent">#10000000</color>
+    <color name="black_translucent">#3D3B3B</color>
+
 </resources>
